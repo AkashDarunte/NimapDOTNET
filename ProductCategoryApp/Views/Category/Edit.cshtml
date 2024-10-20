@@ -1,0 +1,22 @@
+@model ProductCategoryApp.Models.Category
+
+<h1>Edit Category</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="CategoryName"></label>
+        <input asp-for="CategoryName" class="form-control" required />
+        <span asp-validation-for="CategoryName" class="text-danger"></span>
+    </div>
+    
+    <input type="hidden" asp-for="CategoryId" />
+
+    <div>
+        <button type="submit" class="btn btn-primary">Update Category</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

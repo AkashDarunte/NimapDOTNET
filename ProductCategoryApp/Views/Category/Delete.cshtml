@@ -1,0 +1,17 @@
+@model ProductCategoryApp.Models.Category
+
+<h1>Delete Category</h1>
+
+<div>
+    <h4>Are you sure you want to delete this category?</h4>
+    <h5>@Model.CategoryName</h5>
+    <p>Category ID: @Model.CategoryId</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.CategoryId" />
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
